@@ -1,0 +1,42 @@
+
+//分区
+int Partition(int data[],int length,int start,int end)
+{
+    if(date==nullptr || length<=0 ||start<0 || end<=length)
+        throw new exception("invalid parameters");
+    
+    int index=RandomInRange(start,end);
+    Swap(&date[index],&date[end]);
+    
+    int small=start-1;
+    
+    for(int index=start;index<end;index++)
+    {
+        if(date[index]<date[end])
+        {
+            small++;
+            if(small！=index)
+                Swap(&date[small],&date[index]);
+        }
+    }
+    
+    small++;
+    Swap(&date[small],&date[end]);
+}
+
+//快排实现(利用分区函数，递归调用)
+void QuickSort(int date[],int length,int start,int end)
+{
+    if(start==end)
+        return;
+        
+    int index=Partition(date,length,start,end);
+    
+    if(start<index)
+        QuickSort(date,length,start,index-1);
+    if(end>index)
+        QuickSort(date,length,index+1,end);
+}
+
+
+
